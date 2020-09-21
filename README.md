@@ -30,7 +30,7 @@ Use:
 $ docker-compose build
 ```
 
-The build step will take awhile as it configures the container to meet Backdrop's requirements. Ideally this step is only necessary once -- unless of course the container is removed. Because this step creates a brand new Backdrop installation, anytime this command is run you will run into Backdrop's initial configuration setup because Backdrop will need the database credentials again.
+The build step will take awhile as it configures the container to meet Backdrop's requirements. Ideally this step is only necessary once -- unless of course the container is deleted.
 
 ### 2. Launch the projecct.
 
@@ -61,15 +61,15 @@ The database credentials exists in `docker-compose.yml` and have these default v
 
 **Special Note**
 
-It's recommended to change the default database credentials to those that aren't published in a public repository on the internet. After doing that you'll need to repeat steps 1 and 2 above.
+It's recommended to change the default database credentials if you choose to use this repo in production somewhere.
 
 **IMPORTANT**
 
 **Before submitting the database credentials proceed to step 4**
 
 ### 4. Set the Database Address
-The default value `localhost` won't work and is hidden in the `Advanced` section when filling in the database credentials.
-Because the database exists in a separate container this must be changed from `localhost` to `mysql`. This references the container's address in the docker network.
+The default value `127.0.0.1` won't work and is hidden in the `Advanced` section when filling in the database credentials.
+Because the database exists in a separate container this must be changed from `127.0.0.1` to `mysql`. This references the container's address in the docker network.
 
 ### 5. Rejoice
 Now you should be able to finish Backdrop's setup sequence and enter in your site information. 
