@@ -11,12 +11,14 @@ This project uses Docker to manage the installation and configuration of Backdro
 
 ### 1. Run the installer
 
-To install the Backdrop CMS run
+To install the Backdrop CMS `cd` into the project directory and run
 
 ```
 ./install.sh
 ```
 in the terminal.
+
+Python 3 is required for the installer to run.
 
 ### 2. Build the project.
 
