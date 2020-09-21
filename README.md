@@ -9,7 +9,16 @@ In order to run multiple Backdrop projects one one machine simply rename the pro
 ### 0. Install Docker
 This project uses Docker to manage the installation and configuration of Backdrop's dependencies. Make sure that Docker is installed on your host machine. Installation instructions can be found here: [Mac](https://docs.docker.com/v17.12/docker-for-mac/install/)  |  [Windows](https://docs.docker.com/docker-for-windows/install/)  |  [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-### 1. Build the project.
+### 1. Run the installer
+
+To install the Backdrop CMS run
+
+```
+./install.sh
+```
+in the terminal.
+
+### 2. Build the project.
 
 In order to use this project it must be built in the terminal. 
 
