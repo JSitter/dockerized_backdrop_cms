@@ -69,7 +69,7 @@ It's recommended to change the default database credentials if you choose to use
 
 ### 4. Set the Database Address
 The default value `127.0.0.1` won't work and is hidden in the `Advanced` section when filling in the database credentials.
-Because the database exists in a separate container this must be changed from `127.0.0.1` to `mysql`. This references the container's address in the docker network.
+Because the database exists in a separate container this must be changed from `127.0.0.1` to `backdropdb`. This references the container's address in the docker network.
 
 ### 5. Rejoice
 Now you should be able to finish Backdrop's setup sequence and enter in your site information. 
