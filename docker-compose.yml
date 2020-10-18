@@ -1,6 +1,6 @@
 version: "3.6"
 services:
-  mysql:
+  backdropdb:
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: app
@@ -10,7 +10,7 @@ services:
     expose:
         - "3306"
     volumes:
-    - mysql:/var/lib/mysql
+    - backdropdb:/var/lib/mysql
   
   web:
     build: .
@@ -24,4 +24,4 @@ services:
     - ./themes:/app/themes
 
 volumes:
-  mysql:
+  backdropdb:
