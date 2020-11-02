@@ -64,7 +64,7 @@ Now you should be able to finish Backdrop's setup sequence and enter in your sit
 After this, you should have a fully functional Backdrop installation without the need to install and configure php, apache, and mysql on your host machine. 
 
 **Note**
-This project is for creating a dev environment to create and test themes, modules, and profiles. **It does not attempt to solve any update regimes that must be in place on the production server.** Be very careful before implementing this project in a mission critical production environment to avoid issues when updates are released.
+This project is for creating a dev environment to create and test themes, and modules. **It does not attempt to solve any update regimes that must be in place on the production server.** Be very careful before implementing this project in a mission critical production environment to avoid issues when updates are released.
 
 ## License
 MIT
