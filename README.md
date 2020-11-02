@@ -1,22 +1,21 @@
 # Basic Dockerized Backdrop Project
 
-This project allows for easy site development by allowing Docker to take care of running and configuring Apache and MySql. Any themes, profiles, or modules should be placed inside this project's files, layouts, modules, sites, or themes directory.
+This project allows for easy site development by allowing Docker to take care of running and configuring Apache and MySql. For ease of use and updating of Backdrop Core, certain folders that contain custom code are separated out of Backdrop's source folder. These directories are `files`, `layouts`, `modules`, `sites`, and `themes`. Custom and contributed code should be placed inside these folders which will appear in this project's folder after installation.
 
-In order to run multiple Backdrop projects one one machine simply rename the project directory from dockerized_backdrop_cms to the name of the project you're working on. Simply putting the project in another folder will not create a fresh Docker project.
+In order to run multiple Backdrop projects one must simply rename the project directory from dockerized_backdrop_cms to your preferred project's name and change the name of the database volume referenced in `docker-compose.yml` from `backdropdb` to something else. Simply putting the project in another folder will not create a fresh Docker project.
 
 ## Installation
 
 ### 0. Install Docker
-This project uses Docker to manage the installation and configuration of Backdrop's dependencies. Make sure that Docker is installed on your host machine. Installation instructions can be found here: [Mac](https://docs.docker.com/v17.12/docker-for-mac/install/)  |  [Windows](https://docs.docker.com/docker-for-windows/install/)  |  [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+This project uses Docker to manage the installation and configuration of Backdrop's dependencies. Make sure that Docker is installed on your host machine. Installation instructions can be found here: [Mac](https://docs.docker.com/v17.12/docker-for-mac/install/)  |  [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 ### 1. Run the installer
 
-To install the Backdrop CMS `cd` into the project directory and run
+To install the Backdrop CMS use the terminal and `cd` into the project directory. Then run
 
 ```
-./install.sh
+$ ./install.sh
 ```
-in the terminal.
 
 Python 3 is required for the installer to run.
 
@@ -32,7 +31,7 @@ $ docker-compose build
 
 The build step will take awhile as it configures the container to meet Backdrop's requirements. Ideally this step is only necessary once -- unless of course the container is deleted.
 
-### 2. Launch the projecct.
+### 2. Launch the project.
 
 Use:
 
@@ -69,7 +68,7 @@ It's recommended to change the default database credentials if you choose to use
 
 ### 4. Set the Database Address
 The default value `127.0.0.1` won't work and is hidden in the `Advanced` section when filling in the database credentials.
-Because the database exists in a separate container this must be changed from `127.0.0.1` to `mysql`. This references the container's address in the docker network.
+Because the database exists in a separate container this must be changed from `127.0.0.1` to `backdropdb`. This references the container's address in the docker network.
 
 ### 5. Rejoice
 Now you should be able to finish Backdrop's setup sequence and enter in your site information. 
