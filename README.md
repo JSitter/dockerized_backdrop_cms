@@ -19,19 +19,8 @@ $ ./install.sh
 
 Python 3 is required for the installer to run.
 
-### 2. Build the project.
 
-In order to use this project it must be built in the terminal. 
-
-Use:
-
-```
-$ docker-compose build
-```
-
-The build step will take awhile as it configures the container to meet Backdrop's requirements. Ideally this step is only necessary once -- unless of course the container is deleted.
-
-### 2. Launch the project.
+### 1. Launch the project.
 
 Use:
 
@@ -45,7 +34,7 @@ Anytime you want to shutdown the container use `ctrl-c` to stop the process. Use
 
 You will be able to access the Backdrop installation in your browser at `localhost:8085/`
 
-### 3. Set database credentials.
+### 2. Set database credentials.
 
 Visit `localhost:8085/` to set up Backdrop.
 
@@ -66,11 +55,11 @@ It's recommended to change the default database credentials if you choose to use
 
 **Before submitting the database credentials proceed to step 4**
 
-### 4. Set the Database Address
+### 3. Set the Database Address
 The default value `127.0.0.1` won't work and is hidden in the `Advanced` section when filling in the database credentials.
 Because the database exists in a separate container this must be changed from `127.0.0.1` to `backdropdb`. This references the container's address in the docker network.
 
-### 5. Rejoice
+### 4. Rejoice
 Now you should be able to finish Backdrop's setup sequence and enter in your site information. 
 After this, you should have a fully functional Backdrop installation without the need to install and configure php, apache, and mysql on your host machine. 
 
