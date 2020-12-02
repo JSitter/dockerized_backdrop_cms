@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -x "$(command -v docker)" ]; then
-    ./source_files/downloader.py -d -i ../backdrop-src
+    ./source_files/downloader.py -d -i backdrop-src
     chmod 777 ./backdrop-src/settings.php
     mv backdrop-src/files ./files 
     mv backdrop-src/layouts ./layouts
