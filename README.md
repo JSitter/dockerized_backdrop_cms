@@ -1,4 +1,4 @@
-# Basic Dockerized Backdrop Project
+# Basic Dockerized Backdrop 1.x Project
 
 This project allows for easy site development by allowing Docker to take care of running and configuring Apache and MySql. For ease of use and updating of Backdrop Core, certain folders that contain custom code are separated out of Backdrop's source folder. These directories are `files`, `layouts`, `modules`, `sites`, and `themes`. Custom and contributed code should be placed inside these folders which will appear in this project's folder after installation.
 
