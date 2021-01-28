@@ -19,6 +19,7 @@ $ ./install.sh
 
 Python 3 is required for the installer to run.
 
+The installer will prompt for your project details including the project name, port number, database username, and database password. The installer will configure the docker-compose.yml file with your project specific details. Backdrop will need to be configured with this information when its first run.
 
 ### 1. Launch the project.
 
@@ -32,32 +33,28 @@ In order to launch the project.
 
 Anytime you want to shutdown the container use `ctrl-c` to stop the process. Use `docker-compose up` again to launch the container the next time you want to use it.
 
-You will be able to access the Backdrop installation in your browser at `localhost:8085/`
+You will be able to access the Backdrop installation in your browser at the port that was initially set up at installation at`localhost:{PORT}`.
 
-### 2. Set database credentials.
+### 2. Set Backdrop credentials.
 
-Visit `localhost:8085/` to set up Backdrop.
+Visit `localhost:{PORT}` to set up your backdrop installation.
 
-The database credentials exists in `docker-compose.yml` and have these default values: 
+The database credentials exists in the `docker-compose.yml` under the `environment` section and are set up when the installer is first run: 
 
 ```yml
     environment:
-      MYSQL_DATABASE: app
-      MYSQL_USER: web
-      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: myappname
+      MYSQL_USER: myappusername
+      MYSQL_PASSWORD: mypassword
 ```
 
 **Special Note**
 
-It's recommended to change the default database credentials if you choose to use this repo in production somewhere.
-
-**IMPORTANT**
-
-**Before submitting the database credentials proceed to step 4**
+**Before submitting the database credentials proceed to step 3**
 
 ### 3. Set the Database Address
 The default value `127.0.0.1` won't work and is hidden in the `Advanced` section when filling in the database credentials.
-Because the database exists in a separate container this must be changed from `127.0.0.1` to `backdropdb`. This references the container's address in the docker network.
+Because the database exists in a separate container this must be changed from `127.0.0.1` to the name of your project configured at initial installation. This references the container's address in the docker network and is found in the `docker-compose.yml` file under `MYSQL_DATABASE`.
 
 ### 4. Rejoice
 Now you should be able to finish Backdrop's setup sequence and enter in your site information. 
