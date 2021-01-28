@@ -3,7 +3,7 @@ services:
   {backdropdb}:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: {appName}
+      MYSQL_DATABASE: {backdropdb}
       MYSQL_USER: {dbUser}
       MYSQL_PASSWORD: {dbPassword}
       MYSQL_ROOT_PASSWORD: root
