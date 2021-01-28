@@ -1,21 +1,21 @@
 version: "3.6"
 services:
-  backdropdb:
+  {backdropdb}:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: app
-      MYSQL_USER: web
-      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: {appName}
+      MYSQL_USER: {dbUser}
+      MYSQL_PASSWORD: {dbPassword}
       MYSQL_ROOT_PASSWORD: root
     expose:
         - "3306"
     volumes:
-    - backdropdb:/var/lib/mysql
+    - {backdropdb}:/var/lib/mysql
   
   web:
     build: .
     ports:
-     - 8085:80
+     - {portNumber}:80
     volumes:
     - ./files:/app/files
     - ./layouts:/app/layouts
@@ -24,4 +24,4 @@ services:
     - ./themes:/app/themes
 
 volumes:
-  backdropdb:
+  {backdropdb}:
