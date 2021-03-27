@@ -138,14 +138,17 @@ def get_backdrop_versions(num_of_versions=None):
     releases = root.findall('releases/release')
     for release in releases:
         release_types = release.findall("terms/term")
+        #saved release type
+        rt = None
         security = None
+
         for release_type in release_types:
             try:
-                release_type = release_type.find('value').text
-                if release_type == "Insecure":
-                    security = release_type
+                rt = release_type.find('value').text
+                if rt == "Insecure":
+                    security = rt
             except:
-                release_type = ""
+                rt = ""
         
         release_name = release.find("name").text
         release_version = release.find("version").text
@@ -162,7 +165,7 @@ def get_backdrop_versions(num_of_versions=None):
         release_version = release.find("version").text
         release_order.append(release_version)
         cur_release = {"name": release_name, 
-                        "type": release_type, 
+                        "type": rt, 
                         "url": release_url, 
                         "hash": release_hash,
                         "filename": release_url.split("/")[-1],
